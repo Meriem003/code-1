@@ -16,13 +16,13 @@ int main() {
     scanf("%d", &Dpret);
 
     if (R >= 30000 && Scredit >= 700 && Dpret <= 10) {
-        printf("Vous êtes éligible pour le prêt\n");
+        printf("Vous êtes éligible");
     }
     else if (R >= 30000 && Scredit >= 650 && Dpret <= 15) {
-        printf("Vous êtes éligible avec conditions pour le prêt.\n");
+        printf("Éligible avec conditions");
     }
     else {
-        printf("Vous n'êtes pas éligible pour le prêt");
+        printf("Non éligible");
     }
     return 0;
 }
