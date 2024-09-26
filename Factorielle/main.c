@@ -9,7 +9,7 @@ int main()
     scanf("%d",&N);
     F = 1;
     if(N>0){
-        for (i=2;i<= N;i++){
+        for (i=2;i<=N;i++){
             F=F*i;
         }
         printf(" la factorielle = %.2f",F); 
