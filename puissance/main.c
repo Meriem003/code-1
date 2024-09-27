@@ -3,17 +3,17 @@
 
 int main()
 {
-    int base, exposant;
-    int R, i;
-    R=1;
-    printf("veuillez entre la base : ");
-    scanf("%d",&base);
+    int b, p, r= 1;
 
-    printf("veuillez entre la exposant : ");
-    scanf("%d",&exposant);
+    printf("Donner un base : ");
+    scanf("%d",&b);
 
-    for(i=1; i<=exposant;i++){
-        R = R*base;
+    printf("Donner un puissance : ");
+    scanf("%d",&p);
+
+    for(int i = 1; i <= p;i++){
+        r =r*b;
     }
-    printf("resultat = %d",R);
+    printf("result=%d",r);
+    return 0;
 }

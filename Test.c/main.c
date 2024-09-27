@@ -4,14 +4,10 @@
 int main()
 {
     int N, i;
-    int R=1;
     printf("veuillez entre la valeur de N ");
     scanf("%d",&N);
-    if (N>0){
-        for(i=1;i<=N;i++){
-        R=R*i;
-        }
-        printf("%d",R);
-     }
+    for (i=1;i<=10;i++){
+        printf("%d*%d=%d\n",N,i,i*N);
+    }
 return 0;
 }

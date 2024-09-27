@@ -3,14 +3,13 @@
 
 int main() 
 {
-    int N;
-    float F, i;
-    printf("veuillez entre la valeur de N : ");
+    int N, i;
+    int S=0;
+    printf("veuillez entre la valeur de N ");
     scanf("%d",&N);
-    F = 0;
-        for (i=1;i<=N;i++){
-            F=F+i;
-        }
-        printf(" la somme = %.2f",F); 
+    for (i=1;i<=N;i++){
+        S=S+i;
+    }
+    printf("la somme des %d premiers nombres : %d",N,S);
 return 0;
 }
