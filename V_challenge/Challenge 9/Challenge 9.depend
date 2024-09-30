@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1727187990 source:c:\users\ycode\documents\projet1\challenge 9\main.c
+	<stdio.h>
+	<stdlib.h>
+	<math.h>
+
