@@ -16,16 +16,16 @@ typedef struct{
 
 rdv list_res[MAX_rdv]={
 
-                {"coundi","yahya","0745635423",21,"valide",1,"05/10/2024",},
-                {"ANAS","TFITFI","06789340739",23,"valide",2,"05/10/2024",},
-                {"mazine","FRIFIRA","076542328212",18,"valide",3,"05/10/2024",},
-                {"mouad","tewil","06485978212",20,"annule",4,"05/10/2024",},
-                {"ayoub","nemer","0642824254",18,"valide",5,"05/10/2024",},
-                {"DOUNIA","dounia","073849023",18,"valide",6,"06/10/2024",},
-                {"MERYEM","SALHI","078436923234",18,"raporté",7,"10/10/2024",},
-                {"MOHAMMED","MOHAMMED","0765728438212",18,"valide",8,"05/10/2024",},
-                {"ANWAR","M3AYSEB","06624894212",18,"traite",9,"11/10/2024",},
-                {"AMIR","BAHJA","0765438212",18,"valide",10,"05/10/2024",},
+                {"coundi","yahya","0745635423",21,"valide",1,"05/11/2024",},
+                {"abdelkouddous","elalami","06789340739",23,"valide",2,"09/10/2024",},
+                {"sara","salhi","076542328212",18,"valide",3,"07/12/2024",},
+                {"imane","salhi","06485978212",20,"annule",4,"04/01/2024",},
+                {"ayoub","nemer","0642824254",18,"valide",5,"03/10/2022",},
+                {"DOUNIA","dounia","073849023",18,"valide",6,"06/12/2024",},
+                {"MERYEM","SALHI","078436923234",18,"raporte",7,"10/04/2022",},
+                {"MOHAMMED","salki","0765728438212",18,"valide",8,"05/09/2022",},
+                {"ANWAR","nadi","06624894212",18,"traite",9,"11/11/2021",},
+                {"AMIR","BAHJA","0765438212",18,"valide",10,"05/10/2022",},
 };
 
 
@@ -48,10 +48,6 @@ int ReferenceUnique() {
     return count + 1;
 }
 
-bool est_bissextile(int annee) {
-    return (annee % 4 == 0 && (annee % 100 != 0 || annee % 400 == 0));
-}
-
 bool est_date_valide(const char *date) {
     int jour, mois, annee;
     if (sscanf(date, "%d/%d/%d", &jour, &mois, &annee) != 3) {
@@ -61,10 +57,6 @@ bool est_date_valide(const char *date) {
         return false;
     }
     int jours_dans_mois[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
-    if (est_bissextile(annee)) {
-        jours_dans_mois[1] = 29;
-    }
-    return jour <= jours_dans_mois[mois - 1];
 }
 
 void ajouter_rdv(){
@@ -119,10 +111,9 @@ void ajouter_rdv(){
                 printf("La date (JJ/MM/AAAA) : ");
                 scanf("%s", list_res[count].date);
                 if (est_date_valide(list_res[count].date)) {
-                    printf("Date validee\n");
                     break;
                 } else {
-                    printf("Date invalide. Veuillez réessayer.\n");
+                    printf("Date invalide. Veuillez reessayer.\n");
                 }
             }
             printf("Statut (1. valide, 2. reporte, 3. annule, 4. traite): ");
