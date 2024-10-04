@@ -124,20 +124,18 @@ void ajouter_rdv(){
             }
         }
     }
-
 void recherche() {
     int choix, reference, found = 0;
-    char nom[MAX_rdv], date[MAX_rdv];
+    char nom[MAX_rdv];
 
     printf("\n======================= RECHERCHE =======================\n");
-    printf("=     1- Recherche par reference unique                 =\n");
-    printf("=     2- Recherche par nom                              =\n");
-    printf("=     3- Recherche par date                             =\n");
-    printf("=========================================================\n");
+    printf("=     1- Recherche par reference unique                   =\n");
+    printf("=     2- Recherche par nom                                =\n");
+    printf("===========================================================\n");
     printf("Choisissez une option: ");
     scanf("%d", &choix);
     getchar();
-
+    
     switch (choix) {
         case 1:
             printf("Entrez la reference de la reservation : ");
@@ -156,6 +154,7 @@ void recherche() {
                     break;
                 }
             }
+            
             if (!found) {
                 printf("Aucune reservation trouve avec la reference %d.\n", reference);
             }
