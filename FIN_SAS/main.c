@@ -350,6 +350,6 @@ int main() {
             default:
                 printf("Choix invalide.\n");
         }
-    } while (choix != 5);
+    } while (choix != 6);
     return 0;
 }

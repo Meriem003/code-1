@@ -148,6 +148,7 @@ void recherche() {
                     printf("Prenom: %s\n", list_res[i].prenom);
                     printf("Telephone: %s\n", list_res[i].telephone);
                     printf("Age: %d\n", list_res[i].age);
+
                     printf("Statut: %s\n", list_res[i].statut);
                     printf("Reference: %d\n", list_res[i].reference);
                     printf("Date: %s\n", list_res[i].date);
