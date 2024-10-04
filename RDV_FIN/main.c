@@ -14,18 +14,18 @@ typedef struct{
     char date[MAX_rdv];
 } rdv;
 
-rdv list_res[MAX_rdv]={
-
-                {"coundi","yahya","0745635423",21,"valide",1,"05/11/2024",},
-                {"abdelkouddous","elalami","06789340739",23,"valide",2,"09/10/2024",},
-                {"sara","salhi","076542328212",18,"valide",3,"07/12/2024",},
-                {"imane","salhi","06485978212",20,"annule",4,"04/01/2024",},
-                {"ayoub","nemer","0642824254",18,"valide",5,"03/10/2022",},
-                {"DOUNIA","dounia","073849023",18,"valide",6,"06/12/2024",},
-                {"MERYEM","SALHI","078436923234",18,"raporte",7,"10/04/2022",},
-                {"MOHAMMED","salki","0765728438212",18,"valide",8,"05/09/2022",},
-                {"ANWAR","nadi","06624894212",18,"traite",9,"11/11/2021",},
-                {"AMIR","BAHJA","0765438212",18,"valide",10,"05/10/2022",},
+int count = 10;
+rdv list_res[MAX_rdv] = {
+    {"coundi", "yahya", "0745635423", 21, "valide", 1, "05/11/2024"},
+    {"abdelkouddous", "elalami", "06789340739", 23, "valide", 2, "09/10/2024"},
+    {"sara", "salhi", "076542328212", 18, "valide", 3, "07/12/2024"},
+    {"imane", "salhi", "06485978212", 20, "annule", 4, "04/01/2024"},
+    {"ayoub", "nemer", "0642824254", 18, "valide", 5, "03/10/2022"},
+    {"DOUNIA", "dounia", "073849023", 18, "valide", 6, "06/12/2024"},
+    {"MERYEM", "SALHI", "078436923234", 18, "raporte", 7, "10/04/2022"},
+    {"MOHAMMED", "salki", "0765728438212", 18, "valide", 8, "05/09/2022"},
+    {"ANWAR", "nadi", "06624894212", 18, "traite", 9, "11/11/2021"},
+    {"AMIR", "BAHJA", "0765438212", 18, "valide", 10, "05/10/2022"},
 };
 
 
@@ -41,14 +41,11 @@ void MENU() {
     printf("Choisissez une option: ");
 }
 
-int count = 10;
-rdv list_res[MAX_rdv];
-
 int ReferenceUnique() {
     return count + 1;
 }
 
-bool est_date_valide(const char *date) {
+bool date_valide(const char *date) {
     int jour, mois, annee;
     if (sscanf(date, "%d/%d/%d", &jour, &mois, &annee) != 3) {
         return false;
@@ -76,7 +73,7 @@ void ajouter_rdv(){
             while (1) {
                 printf("La date (JJ/MM/AAAA) : ");
                 scanf("%s", list_res[count].date);
-                if (est_date_valide(list_res[count].date)) {
+                if (date_valide(list_res[count].date)) {
 
                     break;
                 } else {
@@ -110,7 +107,7 @@ void ajouter_rdv(){
             while (1) {
                 printf("La date (JJ/MM/AAAA) : ");
                 scanf("%s", list_res[count].date);
-                if (est_date_valide(list_res[count].date)) {
+                if (date_valide(list_res[count].date)) {
                     break;
                 } else {
                     printf("Date invalide. Veuillez reessayer.\n");
@@ -185,27 +182,6 @@ void recherche() {
             }
             break;
 
-        case 3:
-            printf("Entrez la date de la reservation (JJ/MM/AAAA) : ");
-            scanf(" %[^\n]", date);
-            for (int i = 0; i < count; i++) {
-                if (strcmp(list_res[i].date, date) == 0) {
-                    printf("\nReservation trouvee :\n");
-                    printf("Nom: %s\n", list_res[i].nom);
-                    printf("Prenom: %s\n", list_res[i].prenom);
-                    printf("Telephone: %s\n", list_res[i].telephone);
-                    printf("Age: %d\n", list_res[i].age);
-                    printf("Statut: %s\n", list_res[i].statut);
-                    printf("Reference: %d\n", list_res[i].reference);
-                    printf("Date: %s\n", list_res[i].date);
-                    found = 1;
-                }
-            }
-            if (!found) {
-                printf("Aucune reservation trouvee avec la date %s.\n", date);
-            }
-            break;
-
         default:
             printf("Choix invalide. Veuillez reessayer.\n");
             break;
@@ -245,15 +221,14 @@ void modifier_rdv() {
     scanf("%d", &list_res[found].age);
 
     while (1) {
-        printf("Entrez la date (JJ/MM/AAAA): ");
-        scanf("%s", list_res[found].date);
-        if (est_date_valide(list_res[found].date)) {
-            printf("Date valide\n");
-            break;
-        } else {
-            printf("Date invalide, veuillez ressayer.\n");
-        }
-    }
+                printf("La date (JJ/MM/AAAA) : ");
+                scanf("%s", list_res[count].date);
+                if (date_valide(list_res[count].date)) {
+                    break;
+                } else {
+                    printf("Date invalide. Veuillez reessayer.\n");
+                }
+            }
 
     printf("Entrez le statut (1 - valide, 2 - reporte, 3 - annule, 4 - traite): ");
     scanf("%s", list_res[found].statut);
