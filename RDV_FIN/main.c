@@ -82,6 +82,7 @@ void ajouter_rdv(){
             }
             printf("Statut (1. valide, 2. reporte, 3. annule, 4. traite): ");
             scanf("%s", list_res[count].statut);
+
             list_res[count].reference = ReferenceUnique();
             printf("Reservation ajoutee avec la reference %d.\n", list_res[count].reference);
             count++;
@@ -135,7 +136,7 @@ void recherche() {
     printf("Choisissez une option: ");
     scanf("%d", &choix);
     getchar();
-    
+
     switch (choix) {
         case 1:
             printf("Entrez la reference de la reservation : ");
@@ -154,7 +155,7 @@ void recherche() {
                     break;
                 }
             }
-            
+
             if (!found) {
                 printf("Aucune reservation trouve avec la reference %d.\n", reference);
             }
@@ -315,6 +316,6 @@ int main() {
             default:
                 printf("Choix invalide.\n");
         }
-    } while (choix != 5);
+    } while (choix != 6);
     return 0;
 }
