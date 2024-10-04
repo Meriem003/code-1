@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1727970305 source:c:\users\ycode\documents\projet1\fin sas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1727943428 source:c:\users\ycode\documents\projet1\contact\main.c
+	<stdio.h>
+	<string.h>
+	<ctype.h>
+
